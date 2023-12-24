@@ -1,4 +1,4 @@
-public class Range  {
+public class Range2  {
     private int start;
     private int end;
 
@@ -26,7 +26,7 @@ public class Range  {
         return start <= end;
     }
 
-    public boolean isIntersecting(Range otherRange) {
+    public boolean isIntersecting(Range2 otherRange) {
         return start <= otherRange.end && otherRange.start <= end;
     }
 }

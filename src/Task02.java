@@ -6,7 +6,7 @@ public class Task02 {
     public static void main(String[] args) {
         System.out.println("Задание 2");
         Scanner scanner = new Scanner(System.in);
-        List<Range> ranges = new ArrayList<>();
+        List<Range2> ranges = new ArrayList<>();
 
         System.out.print("Введите количество диапазонов: ");
         int n = scanner.nextInt();
@@ -18,13 +18,13 @@ public class Task02 {
             System.out.print("Введите конечную точку для диапазона " + (i + 1) + ": ");
             int end = scanner.nextInt();
 
-            Range range = new Range();
+            Range2 range = new Range2();
             range.setStart(start);
             range.setEnd(end);
             ranges.add(range);
         }
 
-        for (Range range : ranges) {
+        for (Range2 range : ranges) {
             if (range.isValid()) {
                 System.out.println("Длина диапазона: " + range.getLength());
             } else {
@@ -35,8 +35,8 @@ public class Task02 {
         System.out.println("Проверка пересечения диапазонов:");
         for (int i = 0; i < ranges.size() - 1; i++) {
             for (int j = i + 1; j < ranges.size(); j++) {
-                Range range1 = ranges.get(i);
-                Range range2 = ranges.get(j);
+                Range2 range1 = ranges.get(i);
+                Range2 range2 = ranges.get(j);
 
                 if (range1.isIntersecting(range2)) {
                     System.out.println("Диапазон " + (i + 1) + " пересекается с диапазоном " + (j + 1));
